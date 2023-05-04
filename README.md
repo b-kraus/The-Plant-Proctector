@@ -11,7 +11,7 @@ This is the combined code for the Plant Proctector Project.  When I was designin
 
 The code can be broken down into four parts:
 - Buzzer
-- DH11
+- DHT11
 - Soil Moisture Sensor
 - UART
 
@@ -19,7 +19,7 @@ Before I explain how the code funtions, I must explain how the data is stored fo
 
 The buzzer code is very simple, just a simple if statement that will cause the buzzer to sound if the hh, th, moisturePercent go below the set range. 
 
-The DHTT does not use the ADC but uses a if statement. First it reads the hh, then hl, and so on.  It then adds the data and compares it to the check sum.
+The DHT11 does not use the ADC but uses a if statement. First it reads the hh, then hl, and so on.  It then adds the data and compares it to the check sum.
 
 The Gitkin Soil Moisture works by creating a value.  Using the ADC, we are able to collect this value. In order to get the percentage we need to calibrate this value. First you take a reading of the sensor dry and record this data.  Then we take a reading of the sensor in water.  Final we put these values in the following formula:  moisturePercent = ((DRY_VALUE - adcResult ) * 100.0) / (DRY_VALUE - WET_VALUE).
 
@@ -30,3 +30,9 @@ ONE IMPORTANT NOTE: Both sensors use TB2 that are configured different, but to g
 All Wifi code was provided.
 
 I had several issues with the wifi and plan to investigate further on how we can debug these issues. 
+
+
+PCB Information:
+The PCB was specifically designed for this project using a provided template from the class. It uses an MSP430 microcontroller soldered onto the board and is powered by a micro USB header at 5 volts. It also utilizies a copper pour on its bottom layer as this reduced complexity and gives us an entire ground layer to work with. The PCB underwent various revisions, however we ultimately decided on our final design as it made soldering easier going forward.
+
+The PCB encountered some problems in our final design. We were never instructed on how to flash the microcontroller properly and may have designed the PCB incorrectly as a result. We only have 4 pins dedicated to flashing and research showed us that we need 6. As a result we were forced to use a breadboard to show our design.
