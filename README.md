@@ -2,11 +2,14 @@
 Group 40: David Myers, Beth Kraus final project.
 
 This project will help a plant owner take care of their plant by being notified if the humidity or soil moisture of said plant is not optimal. A buzzer, and a notification via wifi will trigger so that the user can tend to their plant.
+
 Schematic Information:
-See attached docs for schematic information. 
+See attached docs for schematic information.
+
 C-Code Information: 
 This is the combined code for the Plant Proctector Project.  When I was designing the code, I first designed each part seperately and tested them accordingly. Both sensors requried calibration in order to get the right result.  After I finished testing each part, I put the code together and tested it as a whole. 
-The code can be broken down into four parts;
+
+The code can be broken down into four parts:
 - Buzzer
 - DH11
 - Soil Moisture Sensor
